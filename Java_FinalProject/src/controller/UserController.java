@@ -22,8 +22,8 @@ public class UserController extends AdminController {
 		return instance;
 	}
 
-	public void Process() {
-		EndView.Processmessage("조리가 진행중입니다." + "\n" + "■□□" + "\n" + "■■□" + "\n" + "■■■" + "\n" + "조리가 완료되었습니다.");
+	public void process() {
+		EndView.processMessage("조리가 진행중입니다." + "\n" + "■□□" + "\n" + "■■□" + "\n" + "■■■" + "\n" + "조리가 완료되었습니다.");
 		log.info();
 	}
 	
@@ -42,6 +42,8 @@ public class UserController extends AdminController {
 	public void oneToppingView(String ToppingName) {
 
 		Topping topping = service.getToppingName(ToppingName);
+		
+		EndView.selectToppingView("[ 토핑을 선택해주십시오. ]");
 
 		if (topping != null) {
 			EndView.toppingView(topping);
@@ -54,6 +56,7 @@ public class UserController extends AdminController {
 	
 	public void totPay(String ramenName, String toppingName, int userMoney) {
 		try {
+			EndView.moneyView("지불하신 금액은" + userMoney + "원입니다.");
 			int change = service.payProcess(ramenName, toppingName, userMoney);
 			if (change > 0) {
 				EndView.changePriceMessage(change);

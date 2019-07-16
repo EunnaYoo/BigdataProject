@@ -1,8 +1,10 @@
 package model.domain.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
 public class Topping {
 	
 	String name;
@@ -11,11 +13,5 @@ public class Topping {
 	@Override
 	public String toString() {
 		return name + " " + price + "¿ø";
-	}
-
-	public Topping(String name, int price) {
-		super();
-		this.name = name;
-		this.price = price;
 	}
 }

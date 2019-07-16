@@ -24,19 +24,22 @@ public class AdminController {
 	// 전체 라면 검색
 	public void ramenListView() {
 
-		ArrayList<Ramen> ramenList = service.getAllList();
+		ArrayList<Ramen> ramenList = service.getAllRamen();
 
 		if (ramenList.size() != 0) {
 			EndView.ramenListView(ramenList);
+			log.info();
 		} else {
 			log.error();
 		}
 	}
 
-	// 특정 라면 검색
+	// 특정 라면 선택
 	public void oneRamenView(String ramenName) {
 
 		Ramen ramen = service.getRamenName(ramenName);
+		
+		EndView.selectRamenView("[ 라면을 선택해주십시오. ]");
 
 		if (ramen != null) {
 			EndView.ramenView(ramen);
@@ -49,7 +52,8 @@ public class AdminController {
 
 	// 라면 리스트 추가
 	public void insertRamen(Ramen newramen) {
-		service.listInsert(newramen);
+		service.ramenListInsert(newramen);
+		EndView.insertMessageView(newramen.getName() + " 레시피가 추가되었습니다.");
 		log.info();
 	}
 
@@ -67,7 +71,7 @@ public class AdminController {
 	// 특정 라면 삭제
 	public void deleteRamen(String ramenName) {
 		try {
-			service.listDelete(ramenName);
+			service.ramenListDelete(ramenName);
 			EndView.messageView("삭제 되었습니다.");
 			log.info();
 		} catch (NotExistException e) {

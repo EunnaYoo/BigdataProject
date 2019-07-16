@@ -30,4 +30,8 @@ public class ToppingVirtualDB {
 	public void insertList(Topping topping) {
 		toppingList.add(topping);
 	}
+	
+	public void deleteList(Topping topping) {
+		toppingList.remove(topping);
+	}
 }

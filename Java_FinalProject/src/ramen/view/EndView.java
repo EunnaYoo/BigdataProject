@@ -36,10 +36,19 @@ public class EndView {
 		System.out.println(message);
 	}
 
+	public static void selectRamenView(String msg) {
+		System.out.println(msg);
+		System.out.println();
+	}
+	
 	public static void ramenView(Ramen ramen) {
-		
 		System.out.println("[ 선택하신 라면 ]");
 		System.out.println(ramen);
+	}
+	
+	public static void selectToppingView(String msg) {
+		System.out.println(msg);
+		System.out.println();
 	}
 	
 	public static void toppingView(Topping topping) {
@@ -47,7 +56,7 @@ public class EndView {
 		System.out.println(topping);
 	}
 
-	public static void Processmessage(String string) {
+	public static void processMessage(String string) {
 		System.out.println(string);
 	}
 
@@ -61,5 +70,14 @@ public class EndView {
 	
 	public static void ramenJsonView(JSONArray ramenList) {
 		System.out.println(ramenList);
+	}
+
+	public static void moneyView(String msg) {
+		System.out.println(msg);
+		System.out.println();
+	}
+
+	public static void insertMessageView(String msg) {
+		System.out.println(msg);
 	}
 }

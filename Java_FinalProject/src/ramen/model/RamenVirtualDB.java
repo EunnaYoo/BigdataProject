@@ -31,6 +31,10 @@ public class RamenVirtualDB {
 		ramenList.add(ramen);
 	}
 	
+	public void deleteList(Ramen ramen) {
+		ramenList.remove(ramen);
+	}
+	
 	public JSONArray getjson() {
 		JSONArray jsonArray = JSONArray.fromObject(ramenList);
 		return jsonArray;

@@ -21,8 +21,7 @@ public class RamenService {
 	}
 		
 	// 전체 라면 보여주기
-	public ArrayList<Ramen> getAllList() {
-		
+	public ArrayList<Ramen> getAllRamen() {
 		return ramenVirtualData.getramenList();
 	}
 	
@@ -51,9 +50,10 @@ public class RamenService {
 	}
 	
 	// 라면 리스트 추가
-	public void listInsert(Ramen newramen) {
-		ramenVirtualData.insertList(newramen);
+	public void ramenListInsert(Ramen newRamen) {
+		ramenVirtualData.insertList(newRamen);
 	}
+	
 	
 	// 라면 리스트 가격 수정
 	public void listUpdatePrice(String ramenName) throws NotExistException {
@@ -68,24 +68,18 @@ public class RamenService {
 	}
 	
 	// 라면 리스트 삭제
-	public void listDelete(String ramenName) throws NotExistException {
-		
+	public void ramenListDelete(String ramenName) throws NotExistException {
+
 		Ramen search = getRamenName(ramenName);
-		ArrayList<Ramen> v = ramenVirtualData.getramenList();
-		
-		for(int i = 0; i < v.size(); i++) {
-			
-			if(search == null) {
-				throw new NotExistException("-------- 삭제할 수 있는 리스트가 존재하지 않습니다. --------");
-			} else if (v.get(i).getName() == ramenName) {
-				v.remove(i);
-			}
+		if (search == null) {
+			throw new NotExistException("-------- 삭제할 수 있는 리스트가 존재하지 않습니다. --------");
 		}
+		ramenVirtualData.deleteList(search);
 	}
+	
 	
 	// 전체 토핑 보여주기
 	public ArrayList<Topping> getAllTopping() {
-
 		return toppingVirtualData.getToppingList();
 	}
 	
@@ -111,6 +105,21 @@ public class RamenService {
 			throw new NotExistException("--------- 선택하신 라면이 존재하지 않습니다. --------");
 		}
 		return topping;
+	}
+	
+	// 토핑 리스트 추가
+	public void toppingListInsert(Topping newTopping) {
+		toppingVirtualData.insertList(newTopping);
+	}
+	
+	// 토핑 리스트 삭제
+	public void ToppingListDelete(String toppingName) throws NotExistException {
+		
+		Ramen search = getRamenName(toppingName);
+		if (search == null) {
+			throw new NotExistException("-------- 삭제할 수 있는 리스트가 존재하지 않습니다. --------");
+		}
+		ramenVirtualData.deleteList(search);
 	}
 	
 	// 계산 프로세스

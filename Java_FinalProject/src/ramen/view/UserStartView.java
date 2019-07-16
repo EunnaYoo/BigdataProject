@@ -14,20 +14,16 @@ public class UserStartView {
 		controller.toppingListView();
 		System.out.println();
 		
-		System.out.println("라면을 골라주십시오.");
-		System.out.println();
 		controller.oneRamenView("신라면");
 		System.out.println();
 		
-		System.out.println("토핑을 골라주십시오.");
-		System.out.println();
 		controller.oneToppingView("떡");
 		System.out.println();
 		
-		controller.Process();
+		controller.totPay("신라면", "떡", 1000);
 		System.out.println();
 		
-		controller.totPay("신라면", "떡", 1000);
+		controller.process();
+		System.out.println();
 	}
-
 }
