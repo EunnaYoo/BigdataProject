@@ -14,6 +14,6 @@ public class Ramen {
 	
 	@Override
 	public String toString() {
-		return name + " " + price + "¿ø" + " " + time;
+		return name + "\t" + price + "¿ø" + "\t" + time;
 	}
 }

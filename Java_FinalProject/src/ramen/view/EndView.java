@@ -11,7 +11,7 @@ public class EndView {
 	public static void ramenListView(ArrayList<Ramen> ramenList) {
 		
 		System.out.println("[ 라면 목록 ]");
-		System.out.println("라면이름" + " " + "가격" + " " + "조리시간");
+		System.out.println("라면이름" + "\t" + "가격" + "\t" + "조리시간");
 		
 		for (Ramen v : ramenList) {
 			if (v != null) {
@@ -23,7 +23,7 @@ public class EndView {
 	public static void toppingListView(ArrayList<Topping> toppingList) {
 
 		System.out.println("[ 토핑 목록 ]");
-		System.out.println("이름" + " " + "가격");
+		System.out.println("이름" + "\t" + "가격");
 
 		for (Topping v : toppingList) {
 			if (v != null) {
