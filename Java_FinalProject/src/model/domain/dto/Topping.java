@@ -10,7 +10,7 @@ public class Topping {
 	
 	@Override
 	public String toString() {
-		return name + price + "¿ø";
+		return name + " " + price + "¿ø";
 	}
 
 	public Topping(String name, int price) {

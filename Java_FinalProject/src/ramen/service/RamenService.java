@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import model.domain.dto.Ramen;
 import model.domain.dto.Topping;
+import net.sf.json.JSONArray;
 import ramen.exception.NotExistException;
 import ramen.model.RamenVirtualDB;
 import ramen.model.ToppingVirtualDB;
@@ -18,7 +19,7 @@ public class RamenService {
 	public static RamenService getInstance() {
 		return instance;
 	}
-	
+		
 	// 전체 라면 보여주기
 	public ArrayList<Ramen> getAllList() {
 		
@@ -112,17 +113,29 @@ public class RamenService {
 		return topping;
 	}
 	
-	
-	// 토핑 추가
-	public int ramenTopping(String ramenName, String toppingName) throws NotExistException {
-
+	// 계산 프로세스
+	public int payProcess(String ramenName, String toppingName, int userMoney) throws NotExistException {
+		
 		Ramen ramen = getRamenName(ramenName);
 		Topping topping = getToppingName(toppingName);
-
-		if (ramen == null) {
-			throw new NotExistException("-------- 수정 가능한 리스트가 존재하지 않습니다. --------");
+		
+		int tot = ramen.getPrice() + topping.getPrice();
+		
+		if (ramenName == null) {
+			throw new NotExistException("--------- 선택하신 라면이 존재하지 않습니다. --------");
+		} else if (userMoney > tot) {
+			return userMoney - tot;
+		} else if(userMoney < tot) {
+			return userMoney - tot;
+		} else if(userMoney == tot) {
+			return userMoney - tot;
 		}
-		return ramen.getPrice() + topping.getPrice();
+		return tot;
+	}
+	
+	// 라면 데이터 json으로 가져오기
+	public JSONArray getAllJson() {
+		return ramenVirtualData.getjson();
 	}
 }
 

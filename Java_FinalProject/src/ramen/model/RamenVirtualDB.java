@@ -1,8 +1,8 @@
 package ramen.model;
 
 import java.util.ArrayList;
-
 import model.domain.dto.Ramen;
+import net.sf.json.JSONArray;
 
 public class RamenVirtualDB {
 	
@@ -29,6 +29,11 @@ public class RamenVirtualDB {
 	
 	public void insertList(Ramen ramen) {
 		ramenList.add(ramen);
+	}
+	
+	public JSONArray getjson() {
+		JSONArray jsonArray = JSONArray.fromObject(ramenList);
+		return jsonArray;
 	}
 }
 

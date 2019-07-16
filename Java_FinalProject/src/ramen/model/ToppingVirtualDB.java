@@ -16,6 +16,7 @@ public class ToppingVirtualDB {
 		toppingList.add(new Topping("계란", 200));
 		toppingList.add(new Topping("만두", 800));
 		toppingList.add(new Topping("떡", 500));
+		toppingList.add(new Topping("토핑없음", 0));
 	}
 	
 	public static ToppingVirtualDB getInstance() {

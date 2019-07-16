@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import model.domain.dto.Ramen;
 import model.domain.dto.Topping;
+import net.sf.json.JSONArray;
 
 public class EndView {
 	
@@ -32,7 +33,6 @@ public class EndView {
 	}
 	
 	public static void messageView(String message) {
-		
 		System.out.println(message);
 	}
 
@@ -52,8 +52,14 @@ public class EndView {
 	}
 
 	public static void addPirceMessage(int ramenTopping) {
-		System.out.println("총 가격은 " + ramenTopping + "원 입니다.");
+		System.out.println("지불해야 될 남은 금액은 " + ramenTopping + "원 입니다.");
 	}
 
-
+	public static void changePriceMessage(int change) {
+		System.out.println("받으실 금액은 " + change + "원 입니다.");
+	}
+	
+	public static void ramenJsonView(JSONArray ramenList) {
+		System.out.println(ramenList);
+	}
 }

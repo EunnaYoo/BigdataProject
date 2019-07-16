@@ -17,7 +17,7 @@ public class AdminStartView {
 		System.out.println();
 		controller.ramenListView();
 		System.out.println();
-		controller.oneRamenView("너구리");
+		controller.oneRamenView("쫄면");
 		System.out.println();
 		
 		controller.updateRamenPrice("불닭볶음면");
@@ -28,5 +28,9 @@ public class AdminStartView {
 		controller.deleteRamen("너구리");
 		System.out.println();
 		controller.ramenListView();
+		System.out.println();
+		
+		System.out.println("JSON 데이터 가져오기");
+		controller.JsonListView();
 	}
 }

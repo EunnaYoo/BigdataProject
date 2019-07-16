@@ -27,7 +27,7 @@ public class UserStartView {
 		controller.Process();
 		System.out.println();
 		
-		controller.addTopping("½Å¶ó¸é", "¶±");
+		controller.totPay("½Å¶ó¸é", "¶±", 1000);
 	}
 
 }
