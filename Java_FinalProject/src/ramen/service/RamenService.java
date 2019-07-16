@@ -125,7 +125,7 @@ public class RamenService {
 	// 계산 프로세스
 	public int payProcess(String ramenName, String toppingName, int userMoney) throws NotExistException {
 		
-		Ramen ramen = getRamenName(ramenName);
+		Ramen ramen = getRamenName(ramenName); 
 		Topping topping = getToppingName(toppingName);
 		
 		int tot = ramen.getPrice() + topping.getPrice();
