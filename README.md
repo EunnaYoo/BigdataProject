@@ -29,7 +29,6 @@
        - DataSchool_PPT.pdf  
        - Requriment Document.pdf ( 요구사항 정의서 )
          
-   3) Progress of the Project : https://github.com/EunnaYoo/DataSchool_Web/projects/1
 
 **5. RecipeMaster : 레시피 정보 제공을 위한 레시피 검색 사이트 _ Spring Boots(SemiProject)**    
    1) Project Description  
